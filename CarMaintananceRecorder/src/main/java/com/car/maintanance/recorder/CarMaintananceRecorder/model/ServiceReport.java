@@ -18,8 +18,10 @@ public class ServiceReport {
     private UUID id;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+
     @ManyToOne
-    private Automobile automobile;
+    @JoinColumn(name = "car_id")
+    private Car car;
     private List<ServiceRecord> records;
     private BigDecimal amount;
     private String currency;

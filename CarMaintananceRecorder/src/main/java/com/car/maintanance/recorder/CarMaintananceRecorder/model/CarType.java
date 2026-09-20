@@ -1,6 +1,5 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.model;
 
-public enum AutomobileType {
-
+public enum CarType {
      SEDAN, SUV, WAGON, SPORTS_CAR, MINIVAN, CABRIO
 }

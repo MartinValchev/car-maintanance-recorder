@@ -1,9 +1,6 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,13 +10,18 @@ import java.util.UUID;
 @Setter
 @Entity
 public class ServiceRecord extends AbstractRecord {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    private String serviceType;
+
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
+
     @Override
     protected RecordType getRecordType() {
         return RecordType.SERVICE;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-    private String serviceType;
 }

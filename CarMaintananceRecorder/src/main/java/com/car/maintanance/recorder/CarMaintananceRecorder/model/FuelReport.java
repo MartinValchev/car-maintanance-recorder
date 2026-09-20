@@ -1,15 +1,17 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+@Entity
+@Getter
+@Setter
 public class FuelReport {
 
     @Id
@@ -17,8 +19,12 @@ public class FuelReport {
     private UUID id;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+
     @ManyToOne
-    private Automobile automobile;
+    @JoinColumn(name = "car_id")
+    private Car car;
+
+    @OneToMany(mappedBy = "fuel_record", cascade = CascadeType.ALL)
     private List<FuelRecord> records;
     private BigDecimal amount;
     private String currency;
