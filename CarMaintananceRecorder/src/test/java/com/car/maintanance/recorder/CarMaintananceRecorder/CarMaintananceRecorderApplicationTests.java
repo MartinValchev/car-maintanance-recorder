@@ -16,4 +16,10 @@ class CarMaintananceRecorderApplicationTests {
 	void thisPassed() {
 		assertEquals(1, 1, "Fixed");
 	}
+
+	// Break it again - change PipelineTest.java
+	@Test
+	void thisFails() {
+		assertEquals(1, 2, "broken again");
+	}
 }
