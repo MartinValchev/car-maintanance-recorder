@@ -1,20 +1,20 @@
 spring:
   application:
     name: CarMaintananceRecorder
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/car_maintanance_db}
-    username: ${SPRING_DATASOURCE_USER:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        default_schema: car_maintanance_db
-        show_sql: true
-  liquibase:
-    enabled: true
-    change-log: classpath:db/changelog/changelog-master.yaml
-    default-schema: car_maintanance_db
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/car_maintanance_db}
+#    username: ${SPRING_DATASOURCE_USER:postgres}
+#    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    properties:
+#      hibernate:
+#        default_schema: car_maintanance_db
+#        show_sql: true
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:db/changelog/changelog-master.yaml
+#    default-schema: car_maintanance_db
 
 display:
   name: Hello ${project.name}
