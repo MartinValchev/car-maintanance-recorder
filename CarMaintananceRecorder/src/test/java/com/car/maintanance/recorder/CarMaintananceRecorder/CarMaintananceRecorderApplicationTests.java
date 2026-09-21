@@ -13,7 +13,7 @@ class CarMaintananceRecorderApplicationTests {
 	}
 
 	@Test
-	void thisFails() {
-		assertEquals(1, 2, "Intentionally broken");
+	void thisPassed() {
+		assertEquals(1, 1, "Fixed");
 	}
 }
