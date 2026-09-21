@@ -9,22 +9,22 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
+//@Entity
 @Getter
 @Setter
 public class FuelReport {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
+//    @ManyToOne
+//    @JoinColumn(name = "car_id")
     private Car car;
 
-    @OneToMany(mappedBy = "fuel_record", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "fuelReport", cascade = CascadeType.ALL)
     private List<FuelRecord> records;
     private BigDecimal amount;
     private String currency;

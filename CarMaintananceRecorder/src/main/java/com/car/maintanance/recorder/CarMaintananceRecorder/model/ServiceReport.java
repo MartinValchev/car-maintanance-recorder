@@ -9,18 +9,18 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
+//@Entity
 @Getter
 @Setter
 public class ServiceReport {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
+//    @ManyToOne
+//    @JoinColumn(name = "car_id")
     private Car car;
     private List<ServiceRecord> records;
     private BigDecimal amount;

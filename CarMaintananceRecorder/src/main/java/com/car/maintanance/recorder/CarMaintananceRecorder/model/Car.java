@@ -9,10 +9,10 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity
+//@Entity
 public class Car {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String make;
     private String model;
@@ -22,7 +22,7 @@ public class Car {
     private FuelType fuelType;
     private LocalDateTime insertDate;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
+//    @ManyToOne
+//    @JoinColumn(name = "owner_id")
     private CarOwner owner;
 }

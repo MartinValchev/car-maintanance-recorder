@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity
+//@Entity
 public class ServiceRecord extends AbstractRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -16,9 +16,13 @@ public class ServiceRecord extends AbstractRecord {
 
     private String serviceType;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
+//    @ManyToOne
+//    @JoinColumn(name = "car_id")
     private Car car;
+
+//    @ManyToOne
+//    @JoinColumn(name = "service_report_id")
+    private ServiceReport serviceReport;
 
     @Override
     protected RecordType getRecordType() {

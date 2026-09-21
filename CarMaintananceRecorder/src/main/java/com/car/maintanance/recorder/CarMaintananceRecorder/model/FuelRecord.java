@@ -9,16 +9,17 @@ import java.util.UUID;
 
 @Getter
 @Setter
+//@Entity
 public class FuelRecord extends AbstractRecord {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private FuelType fuelType;
     private BigDecimal pricePerLitre;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
+//    @ManyToOne
+//    @JoinColumn(name = "car_id")
     private Car car;
 
     @Override
@@ -26,7 +27,7 @@ public class FuelRecord extends AbstractRecord {
         return RecordType.FUEL;
     }
 
-    @OneToMany
-    @JoinColumn(name = "fuel_report_id")
+//    @ManyToOne
+//    @JoinColumn(name = "fuel_report_id")
     private FuelReport fuelReport;
 }

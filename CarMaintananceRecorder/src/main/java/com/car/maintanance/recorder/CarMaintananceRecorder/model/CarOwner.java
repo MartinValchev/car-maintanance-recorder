@@ -11,10 +11,10 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity
+//@Entity
 public class CarOwner {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String firstName;
     private String lastName;
