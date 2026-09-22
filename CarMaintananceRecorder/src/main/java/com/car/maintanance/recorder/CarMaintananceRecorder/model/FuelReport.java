@@ -24,7 +24,7 @@ public class FuelReport {
     @JoinColumn(name = "car_id")
     private Car car;
 
-    @OneToMany(mappedBy = "fuel_record", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fuelReport", cascade = CascadeType.ALL)
     private List<FuelRecord> records;
     private BigDecimal amount;
     private String currency;

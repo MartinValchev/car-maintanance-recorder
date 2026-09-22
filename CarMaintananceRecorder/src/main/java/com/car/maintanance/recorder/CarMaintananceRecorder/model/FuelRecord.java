@@ -9,6 +9,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@Entity
 public class FuelRecord extends AbstractRecord {
 
     @Id
@@ -26,7 +27,7 @@ public class FuelRecord extends AbstractRecord {
         return RecordType.FUEL;
     }
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "fuel_report_id")
     private FuelReport fuelReport;
 }

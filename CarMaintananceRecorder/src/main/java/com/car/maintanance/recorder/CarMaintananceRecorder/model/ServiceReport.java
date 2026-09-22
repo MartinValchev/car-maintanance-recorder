@@ -22,6 +22,8 @@ public class ServiceReport {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
+
+    @OneToMany(mappedBy = "serviceReport", cascade = CascadeType.ALL)
     private List<ServiceRecord> records;
     private BigDecimal amount;
     private String currency;
