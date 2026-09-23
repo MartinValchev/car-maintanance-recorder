@@ -16,6 +16,7 @@ public class CarOwner {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private long ownerId;
     private String firstName;
     private String lastName;
     private String address;

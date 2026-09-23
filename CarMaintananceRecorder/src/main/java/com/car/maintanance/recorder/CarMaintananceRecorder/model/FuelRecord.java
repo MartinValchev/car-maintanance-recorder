@@ -26,8 +26,4 @@ public class FuelRecord extends AbstractRecord {
     protected RecordType getRecordType() {
         return RecordType.FUEL;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "fuel_report_id")
-    private FuelReport fuelReport;
 }

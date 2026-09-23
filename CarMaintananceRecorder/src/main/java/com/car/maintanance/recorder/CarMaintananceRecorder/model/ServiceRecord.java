@@ -24,8 +24,4 @@ public class ServiceRecord extends AbstractRecord {
     protected RecordType getRecordType() {
         return RecordType.SERVICE;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "service_report_id")
-    private ServiceReport serviceReport;
 }

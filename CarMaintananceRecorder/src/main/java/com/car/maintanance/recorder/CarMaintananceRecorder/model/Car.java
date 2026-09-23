@@ -14,6 +14,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private long carId;
     private String make;
     private String model;
     private String vin;
