@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 public abstract class AbstractRecord {
     private LocalDateTime createDate;
+    private LocalDateTime modifiedDate;
     private int currentMileage;
     private BigDecimal amount;
     private String currency;

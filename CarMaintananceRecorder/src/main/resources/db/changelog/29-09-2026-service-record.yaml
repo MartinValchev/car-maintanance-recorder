@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: service_record
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: service_type
+                  type: varchar(50)
+              - column:
+                  name: car_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_car_car_id
+                    references: car(id)
+              - column:
+                  name: create_date
+                  type: datetime
+              - column:
+                  name: modified_date
+                  type: datetime
+              - column:
+                  name: current_mileage
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal
+              - column:
+                  name: currency
+                  type: varchar(50)
+              - column:
+                  name: notes
+                  type: varchar(100)

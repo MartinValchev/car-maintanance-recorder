@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/29-09-2026-init-schema.yaml
+  - include:
+      file: classpath:db/changelog/29-09-2026-car-owner.yaml
+  - include:
+      file:  classpath:db/changelog/29-09-2026-car.yaml
+  - include:
+      file: classpath:db/changelog/29-09-2026-fuel-record.yaml
+  - include:
+      file: classpath:db/changelog/29-09-2026-service-record.yaml
+  - include:
+      file: classpath:db/changelog/sql/data.sql

@@ -1,6 +1,11 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.service;
 
 import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CardDto;
+import com.car.maintanance.recorder.CarMaintananceRecorder.model.Car;
+import com.car.maintanance.recorder.CarMaintananceRecorder.repository.CarRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,10 +14,15 @@ import java.util.Random;
 
 @Component
 public class CarService {
+    private static final Logger logger = LoggerFactory.getLogger(CarService.class);
+
+    @Autowired
+    private CarRepository carRepository;
 
     List<CardDto> allCars = new ArrayList<>();
 
-    public CarService() {
+    public CarService(CarRepository carRepository) {
+        this.carRepository = carRepository;
         CardDto hondaCivic = new CardDto(   1, "Honda", "Civic", "DV35544234776763", 120000, "Hatchback", "petrol", 1);
         CardDto mazdaCx5 = new CardDto(    4, "Mazda", "Cx5", "BV35544234776099", 160000, "SUV", "diesel", 5);
         CardDto subaruWRX = new CardDto(    6, "Subaru", "WRX", "DE355442347760994", 90000, "sedan", "petrol", 80);
@@ -60,10 +70,21 @@ public class CarService {
     }
 
     public List<CardDto> getAllCars() {
-        return allCars;
+        List<CardDto> list = new ArrayList<>();
+        for (Car car : carRepository.findAll()) {
+            list.add(toCardDto(car));
+        }
+        return list;
     }
 
     public CardDto updateCar(CardDto cardDto) {
         return null;
+    }
+    private CardDto toCardDto(Car car) {
+        if (car == null) {
+            return null;
+        }
+        return new CardDto(car.getCarId(), car.getMake(), car.getModel(), car.getVin(), car.getMileage(),
+                car.getCarType(), car.getFuelType(), car.getOwnerId());
     }
 }

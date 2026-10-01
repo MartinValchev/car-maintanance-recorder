@@ -19,11 +19,11 @@ public class Car {
     private String model;
     private String vin;
     private int mileage;
-    private CarType type;
-    private FuelType fuelType;
+    private String carType;
+    private String fuelType;
     private LocalDateTime insertDate;
+    private LocalDateTime modifiedDate;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private CarOwner owner;
+    @Column(name = "owner_id", unique = true, nullable = false)
+    private long ownerId;
 }

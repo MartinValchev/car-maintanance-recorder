@@ -65,7 +65,7 @@
         </Logger>
 
         <!-- Your Application Package -->
-        <Logger name="com.website.campaings.banner_project" level="INFO" additivity="false">
+        <Logger name="com.car.maintanance.recorder.CarMaintananceRecorder" level="INFO" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileAppender"/>
             <AppenderRef ref="ErrorAppender"/>
