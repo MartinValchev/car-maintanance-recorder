@@ -30,7 +30,7 @@ public class CarController {
         return carService.getAllCars();
     }
 
-    @PostMapping("/cars/add")
+    @PostMapping("/cars")
     public CarDto addCar(@RequestBody CarDto carDto) {
         logger.info("Adding new car ...");
         carService.addCar(carDto);
