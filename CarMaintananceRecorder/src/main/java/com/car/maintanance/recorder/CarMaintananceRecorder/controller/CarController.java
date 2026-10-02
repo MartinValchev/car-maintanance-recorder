@@ -1,13 +1,11 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.controller;
 
-import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CardDto;
+import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CarDto;
 import com.car.maintanance.recorder.CarMaintananceRecorder.service.CarService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,14 +19,21 @@ public class CarController {
     private CarService carService;
 
     @GetMapping("/cars/{id}")
-    public CardDto getCarById(@PathVariable("id") long id) {
+    public CarDto getCarById(@PathVariable("id") long id) {
         logger.info("Get car by id: {}", id);
         return carService.getCarById(id);
     }
 
     @GetMapping("/cars")
-    public List<CardDto> getAllCars() {
+    public List<CarDto> getAllCars() {
         logger.info("Getting all cars ...");
         return carService.getAllCars();
+    }
+
+    @PostMapping("/cars/add")
+    public CarDto addCar(@RequestBody CarDto carDto) {
+        logger.info("Adding new car ...");
+        carService.addCar(carDto);
+        return carDto;
     }
 }

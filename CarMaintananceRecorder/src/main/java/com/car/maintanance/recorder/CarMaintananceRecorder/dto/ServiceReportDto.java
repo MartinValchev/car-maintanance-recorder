@@ -13,7 +13,7 @@ public class ServiceReportDto {
     private long serviceReportId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private CardDto car;
+    private CarDto car;
     private List<ServiceRecordDto> records;
     private BigDecimal amount;
     private String currency;

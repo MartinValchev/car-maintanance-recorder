@@ -14,7 +14,7 @@ public class FuelReportDto {
     private String fuelType;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private CardDto cardDto;
+    private CarDto carDto;
     private List<FuelRecordDto> records;
     private BigDecimal amount;
     private String currency;

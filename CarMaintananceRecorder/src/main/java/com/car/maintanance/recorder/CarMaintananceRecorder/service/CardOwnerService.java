@@ -1,7 +1,7 @@
 package com.car.maintanance.recorder.CarMaintananceRecorder.service;
 
 import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CarOwnerDto;
-import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CardDto;
+import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CarDto;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +17,7 @@ public class CardOwnerService {
         return -1;
     }
 
-    public CardDto updateCarOwner(CarOwnerDto carOwnerDto) {
+    public CarDto updateCarOwner(CarOwnerDto carOwnerDto) {
         return null;
     }
 }

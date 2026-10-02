@@ -2,7 +2,7 @@ package com.car.maintanance.recorder.CarMaintananceRecorder;
 
 
 import com.car.maintanance.recorder.CarMaintananceRecorder.controller.CarController;
-import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CardDto;
+import com.car.maintanance.recorder.CarMaintananceRecorder.dto.CarDto;
 import com.car.maintanance.recorder.CarMaintananceRecorder.service.CarService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,11 +37,11 @@ class CarControllerTest {
     @InjectMocks
     private CarController carController;
 
-    private CardDto sampleCar;
+    private CarDto sampleCar;
 
     @BeforeEach
     void setUp() {
-        sampleCar = new CardDto(   1, "Honda", "Civic", "DV35544234776763", 120000, "Hatchback", "petrol", 1);
+        sampleCar = new CarDto(   1, "Honda", "Civic", "DV35544234776763", 120000, "Hatchback", "petrol", 1);
         // TODO: set sample fields on sampleCar here, e.g.:
         // sampleCar.setId(1L);
         // sampleCar.setMake("Toyota");
@@ -55,7 +55,7 @@ class CarControllerTest {
         long carId = 1L;
         when(carService.getCarById(carId)).thenReturn(sampleCar);
 
-        CardDto result = carController.getCarById(carId);
+        CarDto result = carController.getCarById(carId);
 
         assertThat(result).isEqualTo(sampleCar);
         verify(carService, times(1)).getCarById(carId);
@@ -66,7 +66,7 @@ class CarControllerTest {
         long carId = 99L;
         when(carService.getCarById(carId)).thenReturn(null);
 
-        CardDto result = carController.getCarById(carId);
+        CarDto result = carController.getCarById(carId);
 
         assertThat(result).isNull();
         verify(carService, times(1)).getCarById(carId);
@@ -89,11 +89,11 @@ class CarControllerTest {
 
     @Test
     void getAllCars_returnsListFromService() {
-        CardDto secondCar = new CardDto(    4, "Mazda", "Cx5", "BV35544234776099", 160000, "SUV", "diesel", 5);
-        List<CardDto> cars = List.of(sampleCar, secondCar);
+        CarDto secondCar = new CarDto(    4, "Mazda", "Cx5", "BV35544234776099", 160000, "SUV", "diesel", 5);
+        List<CarDto> cars = List.of(sampleCar, secondCar);
         when(carService.getAllCars()).thenReturn(cars);
 
-        List<CardDto> result = carController.getAllCars();
+        List<CarDto> result = carController.getAllCars();
 
         assertThat(result).hasSize(2).containsExactly(sampleCar, secondCar);
         verify(carService, times(1)).getAllCars();
@@ -103,7 +103,7 @@ class CarControllerTest {
     void getAllCars_returnsEmptyList_whenNoCarsExist() {
         when(carService.getAllCars()).thenReturn(List.of());
 
-        List<CardDto> result = carController.getAllCars();
+        List<CarDto> result = carController.getAllCars();
 
         assertThat(result).isEmpty();
         verify(carService, times(1)).getAllCars();

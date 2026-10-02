@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CardDto {
+public class CarDto {
 
     private long carId;
     private String make;
